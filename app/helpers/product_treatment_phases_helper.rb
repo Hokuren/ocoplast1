@@ -1,0 +1,2 @@
+module ProductTreatmentPhasesHelper
+end

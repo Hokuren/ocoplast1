@@ -1,0 +1,16 @@
+
+<%= form_for(@product_treatment_phase) do |f| %>
+
+  <label>Seleccione Producto</label>
+  <div>
+    <%= select_tag(:product, options_for_select( @products.map { |product| [product.name , product.id ] } )  ) %>
+  </div>
+  <label>Seleccione Tratamiento</label>
+  <div>
+  <div>
+    <%= select_tag(:product, options_for_select( @treatment.map { |product| [product.name , product.id ] } )  ) %>
+  </div>
+    
+<% end %> 
+
+

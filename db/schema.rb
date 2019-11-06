@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_06_044124) do
+ActiveRecord::Schema.define(version: 2019_11_06_141726) do
 
   create_table "add_products", force: :cascade do |t|
     t.string "name"
@@ -28,6 +28,32 @@ ActiveRecord::Schema.define(version: 2019_11_06_044124) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "product_treatment_phases", force: :cascade do |t|
+    t.decimal "cost"
+    t.decimal "weight"
+    t.decimal "waste"
+    t.integer "phase_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["phase_id"], name: "index_product_treatment_phases_on_phase_id"
+  end
+
+  create_table "product_treatments", force: :cascade do |t|
+    t.decimal "cost"
+    t.decimal "weight"
+    t.decimal "waste"
+    t.integer "product_id", null: false
+    t.integer "treatment_id", null: false
+    t.integer "product_treatment_phase_id", null: false
+    t.integer "product_treatment_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_product_treatments_on_product_id"
+    t.index ["product_treatment_id"], name: "index_product_treatments_on_product_treatment_id"
+    t.index ["product_treatment_phase_id"], name: "index_product_treatments_on_product_treatment_phase_id"
+    t.index ["treatment_id"], name: "index_product_treatments_on_treatment_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.decimal "cost"
@@ -43,4 +69,9 @@ ActiveRecord::Schema.define(version: 2019_11_06_044124) do
   end
 
   add_foreign_key "add_products", "products"
+  add_foreign_key "product_treatment_phases", "phases"
+  add_foreign_key "product_treatments", "product_treatment_phases"
+  add_foreign_key "product_treatments", "product_treatments"
+  add_foreign_key "product_treatments", "products"
+  add_foreign_key "product_treatments", "treatments"
 end
