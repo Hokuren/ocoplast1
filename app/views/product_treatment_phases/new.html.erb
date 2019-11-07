@@ -1,16 +1,29 @@
 
-<%= form_for(@product_treatment_phase) do |f| %>
-
-  <label>Seleccione Producto</label>
-  <div>
-    <%= select_tag(:product, options_for_select( @products.map { |product| [product.name , product.id ] } )  ) %>
-  </div>
-  <label>Seleccione Tratamiento</label>
-  <div>
-  <div>
-    <%= select_tag(:product, options_for_select( @treatment.map { |product| [product.name , product.id ] } )  ) %>
-  </div>
-    
-<% end %> 
+<div>
+  <%= form_for(@product_treatment_phase) do |f| %>
+    <label>Cost</label>
+    <div>
+      <%= f.text_field :cost, placeholder: "Cost", class:"#" %>
+    </div>
+    <label>weight</label>
+    <div>
+      <%= f.text_field :weight, placeholder: "weight", class:"#" %>
+    </div>
+    <label>waste</label>
+    <div>
+      <%= f.text_field :waste, placeholder: "waste", class:"#" %>
+    </div>
+    <label>Seleccione Producto</label>
+    <div>
+      <%= select_tag(:product, options_for_select( @products.map { |product| [product.name , product.id ] } )  ) %>
+    </div>
+    <label>Seleccione Tratamiento</label>
+    <div>
+    <div>
+      <%= select_tag(:product, options_for_select( @treatment.map { |product| [product.name , product.id ] } )  ) %>
+    </div>
+   
+  <% end %> 
+</div>
 
 
