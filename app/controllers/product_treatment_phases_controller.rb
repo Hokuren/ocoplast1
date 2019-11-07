@@ -17,7 +17,7 @@ class ProductTreatmentPhasesController < ApplicationController
     @product_treatment_phase = ProductTreatmentPhase.new
     #oscar
     @products = Product.all
-    @treatment = Treatment.all
+    @treatments = Treatment.all
   end
 
   # GET /product_treatment_phases/1/edit

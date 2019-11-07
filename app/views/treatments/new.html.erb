@@ -1,0 +1,14 @@
+<h1>Creando Treatment</h1>
+<div>
+  <%= form_for(@treatment) do |f| %>
+  
+    <label>name</label>
+    <div>
+      <%= f.text_field :name, placeholder: "name", class:"#" %>
+    </div>
+    <div>
+      <%= f.submit "Create Treatment" %>
+    </div>
+   
+  <% end %> 
+</div>

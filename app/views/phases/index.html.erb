@@ -1,0 +1,20 @@
+<h1>Phases</h1>
+<th>
+<div>
+<table>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+  </tr>
+  <% @phases.each do |phase| %>
+    <tr>
+    <td><div> <%= phase.id %> </div></td>
+    <td><div> <%= phase.name %> </div></td>
+    <td><%= link_to "Destroy", phase , method: :delete %></td>
+    </tr> 
+    
+  <% end %>
+</table>
+<%= link_to "New", new_phase_path  %>
+</div>
+

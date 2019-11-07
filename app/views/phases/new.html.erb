@@ -1,0 +1,14 @@
+<h1>Creando Phase</h1>
+<div>
+  <%= form_for(@phase) do |f| %>
+  
+    <label>name</label>
+    <div>
+      <%= f.text_field :name, placeholder: "name", class:"#" %>
+    </div>
+    <div>
+      <%= f.submit "Create Phase" %>
+    </div>
+   
+  <% end %> 
+</div>

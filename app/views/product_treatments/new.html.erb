@@ -1,6 +1,7 @@
 
 <div>
-  <%= form_for(@product_treatment_phase) do |f| %>
+  <%= form_for(@product_treatment) do |f| %>
+
     <label>Cost</label>
     <div>
       <%= f.text_field :cost, placeholder: "Cost", class:"#" %>
@@ -15,12 +16,12 @@
     </div>
     <label>Seleccione Producto</label>
     <div>
-      <%= select_tag(:product_id, options_for_select( @products.map { |product| [product.name , product.id ] } )  ) %>
+      <%= select_tag(:product_id, options_for_select(  @products.map { |product| [product.name , product.id ] } )  ) %>
     </div>
     <label>Seleccione Tratamiento</label>
     <div>
     <div>
-      <%= select_tag(:treatment_id, options_for_select( @treatments.map { |treatment| [treatment.name , treatment.id ] } )  ) %>
+      <%= select_tag(:treatment_id, options_for_select(  @treatments.map { |treatment| [treatment.name , treatment.id ] } )  ) %>
     </div>
     <div>
       <%= f.submit "Create Product Treatment" %>

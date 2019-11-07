@@ -14,6 +14,10 @@ class ProductTreatmentsController < ApplicationController
 
   # GET /product_treatments/new
   def new
+    #oscar
+    @products = Product.all
+    @treatments = Treatment.all
+
     @product_treatment = ProductTreatment.new
   end
 
@@ -25,6 +29,8 @@ class ProductTreatmentsController < ApplicationController
   # POST /product_treatments.json
   def create
     @product_treatment = ProductTreatment.new(product_treatment_params)
+    @products = Product.all
+    @treatments = Treatment.all
 
     respond_to do |format|
       if @product_treatment.save
@@ -69,6 +75,6 @@ class ProductTreatmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_treatment_params
-      params.require(:product_treatment).permit(:cost, :weight, :waste, :product_id, :treatment_id, :producttreatmentphase_id)
+      params.require(:product_treatment).permit(:cost, :weight, :waste, :product_id, :treatment_id, :product_treatment_phase_id)
     end
 end

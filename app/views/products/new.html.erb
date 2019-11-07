@@ -1,0 +1,22 @@
+<h1>Creando Producto</h1>
+<div>
+  <%= form_for(@product) do |f| %>
+  
+    <label>name</label>
+    <div>
+      <%= f.text_field :name, placeholder: "name", class:"#" %>
+    </div>
+    <label>Cost</label>
+    <div>
+      <%= f.text_field :cost, placeholder: "Cost", class:"#" %>
+    </div>
+    <label>weight</label>
+    <div>
+      <%= f.text_field :weight, placeholder: "weight", class:"#" %>
+    </div>
+    <div>
+      <%= f.submit "Create Product" %>
+    </div>
+   
+  <% end %> 
+</div>

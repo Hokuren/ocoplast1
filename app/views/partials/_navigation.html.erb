@@ -3,19 +3,21 @@
     <nav id="menu">
         <!-- start menu -->
         <ul>
-            <li><a href="#">Enlace 1</a></li>
-            <li><a href="#">Enlace 2</a>
+            <li><%= link_to "Products", products_path %></li>
+            <li><%= link_to "Treatments", treatments_path %>
                 <!-- start menu desplegable -->
+                <!-- 
                 <ul>
                 <li><a href="#">Enlace 2.1</a></li>
                 <li><a href="#">Enlace 2.2</a></li>
                 <li><a href="#">Enlace 2.3</a></li>
                 </ul>
+                -->
                 <!-- end menu desplegable -->
             </li>
-            <li><a href="#">Enlace 3</a></li>
+            <li><%= link_to "Products_Treatments", new_product_treatment_path %></li>
             <li><a href="#">Enlace 4</a></li>
-            <li><a href="#">Enlace 5</a></li>
+            <li><%= link_to "Phases", phases_path %></li>
         </ul>
         <!-- end menu -->
     </nav>

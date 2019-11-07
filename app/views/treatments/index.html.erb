@@ -1,0 +1,20 @@
+<h1>Treatments</h1>
+<th>
+<div>
+<table>
+  <tr>
+    <th>id</th>
+    <th>name</th>
+  </tr>
+  <% @treatments.each do |treatment| %>
+    <tr>
+    <td><div> <%= treatment.id %> </div></td>
+    <td><div> <%= treatment.name %> </div></td>
+    <td><%= link_to "Destroy", treatment , method: :delete %></td>
+    </tr> 
+    
+  <% end %>
+</table>
+<%= link_to "New", new_treatment_path  %>
+</div>
+
